@@ -92,19 +92,6 @@ void ShowTouches( NSSet *touches );
 }
 
 
-#if !__has_feature(objc_arc)
-- (void) dealloc {
-    [overlayWindow release];
-    overlayWindow = nil;
-    [touchLayers release];
-    touchLayers = nil;
-    [touchColor release];
-    touchColor = nil;
-}
-#endif
-
-
-
 - (void) showTouches: (NSSet *)touches
 {
     [CATransaction begin];
