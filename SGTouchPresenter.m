@@ -33,13 +33,10 @@
 #define kTapDelay       0.1
 
 
-static UIWindow *overlayWindow;
-static BOOL showsTouches;
-static UIColor *touchColor;
-static NSMutableDictionary *touchLayers;
-
-
-void ShowTouches( NSSet *touches );
+static UIWindow *overlayWindow = nil;
+static BOOL showsTouches = NO;
+static UIColor *touchColor = nil;
+static NSMutableDictionary *touchLayers = nil;
 
 
 @implementation SGTouchPresenter
