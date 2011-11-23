@@ -95,7 +95,7 @@ static NSMutableDictionary *touchLayers = nil;
     [CATransaction setDisableActions:YES];
     for ( UITouch *touch in touches ) {
         CGPoint touchPosition = [touch locationInView:nil];
-        NSNumber *touchKey = [NSNumber numberWithInteger:[touch hash]];
+        NSNumber *touchKey = [NSNumber numberWithUnsignedInteger:[touch hash]];
         CALayer *layer = [touchLayers objectForKey:touchKey];
         
         if ( !layer ) {
