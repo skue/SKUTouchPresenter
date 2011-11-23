@@ -59,9 +59,8 @@ static NSMutableDictionary *touchLayers = nil;
             }
         }
         else {
-            Method myMethod  = class_getInstanceMethod( [SGTouchPresenter class], @selector(capturedSendEvent:) );
-            Method appMethod = class_getInstanceMethod( [UIApplication class], @selector(sendEvent:) );
-            method_exchangeImplementations( myMethod, appMethod );
+            // isa swizzling - Treat our application as an instance of SGTouchPresenter
+            [[UIApplication sharedApplication] setValue:[SGTouchPresenter class] forKey:@"isa"];
             
             touchLayers = [[NSMutableDictionary alloc] init];
             overlayWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -74,9 +73,8 @@ static NSMutableDictionary *touchLayers = nil;
     }
     else {
         if ( overlayWindow ) {
-            Method myMethod  = class_getInstanceMethod( [SGTouchPresenter class], @selector(capturedSendEvent:) );
-            Method appMethod = class_getInstanceMethod( [UIApplication class], @selector(sendEvent:) );
-            method_exchangeImplementations( myMethod, appMethod );
+            // Restore default UIApplication behavior
+            [[UIApplication sharedApplication] setValue:[UIApplication class] forKey:@"isa"];
             
 #if !__has_feature(objc_arc)
             [overlayWindow release];
@@ -131,12 +129,12 @@ static NSMutableDictionary *touchLayers = nil;
 }
 
 
-- (void) capturedSendEvent: (UIEvent *)event
+- (void) sendEvent: (UIEvent *)event
 {
     if ( showsTouches && event.type == UIEventTypeTouches ) {
         [self showTouches:event.allTouches];
     }
-    [self capturedSendEvent:event];
+    [super sendEvent:event];
 }
 
 @end

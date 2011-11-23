@@ -22,8 +22,8 @@ The SGTouchPresenter class functions correctly with or without ARC.
 
 When a  color is provided, this class begins intercepting touch events via
 `UIApplication sendEvents:`, displaying a rounded layer wherever a touch occurs.
-Events are passed onward, so this shouldn't affect your apps behavior,
-though there may be a small performance penalty.
+Events are passed onward, so this shouldn't affect your apps behavior
+(though there may be a small performance penalty).
 
 When a color has not been set (or a `nil` color is provided), then the original
 implementation of `UIApplication sendEvents:` is used.
