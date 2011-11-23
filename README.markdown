@@ -14,15 +14,18 @@ There's a sample project included. Basic usage:
   2. Add the `QuartzCore` framework to your project.
   3. Call `setShowsTouchesWithColor:` when your application loads.
 
-The `SGTouchPresenter` class will run correctly with or without ARC.
+The SGTouchPresenter class functions correctly with or without ARC.
 
 ## Details
 
-When a non-`nil` color is provided, this class intercepts touch events via
+`+ (void) setShowsTouchesWithColor: (UIColor *)color`
+
+When a  color is provided, this class begins intercepting touch events via
 `UIApplication sendEvents:`, displaying a rounded layer wherever a touch occurs.
-Events are passed on through, so it shouldn't affect your apps behavior.
-There may be a small performance penalty, but only when highlighting is enabled.
-When a color has not been set (or a `nil` color is provided, then the original
+Events are passed onward, so this shouldn't affect your apps behavior,
+though there may be a small performance penalty.
+
+When a color has not been set (or a `nil` color is provided), then the original
 implementation of `UIApplication sendEvents:` is used.
 
 ## License
