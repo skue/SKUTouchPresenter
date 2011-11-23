@@ -1,8 +1,8 @@
 # SGTouchPresenter
 
-This class will show a large dot wherever the screen is touched. It is primarily
-designed for doing presentations with a mirrored iOS device (iPhone 4S or iPad 2),
-so the audience can follow the presenter's touches.
+This class will show a large dot wherever the screen is touched. The color is
+customizable. This is primarily designed for doing presentations with a mirrored
+iOS device (iPhone 4S or iPad 2), so the audience can follow the presenter's touches.
 
 ![Sample screenshot](https://raw.github.com/skue/SGTouchPresenter/master/SampleApplication/Screenshot.png)
 
