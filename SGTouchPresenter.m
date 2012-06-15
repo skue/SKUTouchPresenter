@@ -2,7 +2,7 @@
 //  SGTouchPresenter.m
 //  SGTouchPresenter
 //  
-//  Copyright 2011 Scott Guelich
+//  Copyright 2011-2012 Scott Guelich
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a
 //  copy of this software and associated documentation files (the "Software"),
@@ -109,11 +109,13 @@ static BOOL swizzled = NO;
             }
         }
         else {
+            // vvvv Delete if subclassing UIApplication and paranoid about App Store approval
             if ( [[UIApplication sharedApplication] class] != [SGTouchPresenter class] ) {
                 // isa swizzling - Treat our application as an instance of SGTouchPresenter
                 [[UIApplication sharedApplication] setValue:[SGTouchPresenter class] forKey:@"isa"];
                 swizzled = YES;
             }
+            // ^^^^ Delete if subclassing UIApplication
 #if !__has_feature(objc_arc)
             [touchLayers autorelease];
 #endif
@@ -128,11 +130,13 @@ static BOOL swizzled = NO;
     }
     else {
         if ( overlayWindow ) {
+            // vvvv Delete if subclassing UIApplication and paranoid about App Store approval
             if ( swizzled ) {
                 // Restore default application class
                 [[UIApplication sharedApplication] setValue:[self superclass] forKey:@"isa"];
                 swizzled = NO;
             }
+            // ^^^^ Delete if subclassing UIApplication
             
 #if !__has_feature(objc_arc)
             [overlayWindow release];
