@@ -16,7 +16,7 @@ There's a sample project included. Basic usage:
 
   1. Add `SGTouchPresenter.h` & `SGTouchPresenter.m` to your project.
   2. Add the `QuartzCore` framework to your project.
-  3. Call `showTouchesWithColor:` or `showTouchesWithColor:onlyWhenMirrored:` when your application loads.
+  3. Call `showTouchesWithColor:` or `showTouchesWithColor:onlyWhenMirrored:` after your application loads.
 
 The SGTouchPresenter class works with or without ARC.
 
@@ -30,7 +30,7 @@ just need to add SGTouchPresenter as a subclass `UIApplication`. Here's how to d
   3. Open `SGTouchPresenter.m` and delete the two blocks of code that say "Delete if subclassing...".
      This isn't necessary to make it work, it just removes the code that Apple might not approve.
   4. Edit `main.m` to add `@"SGTouchPresenter"` as the third argument to `UIApplicationMain`.
-  5. Call `showTouchesWithColor:` or `showTouchesWithColor:onlyWhenMirrored:` when your application loads.
+  5. Call `showTouchesWithColor:` or `showTouchesWithColor:onlyWhenMirrored:` after your application loads.
 
 ### Custom UIApplication Subclass
 
@@ -65,5 +65,5 @@ isa swizzling to dynamically provide this functionality.
 
 ## License
 
-Copyright 2011 Scott Guelich.  
+Copyright 2011-2012 Scott Guelich.  
 May be distributed in accordance with the MIT license.
