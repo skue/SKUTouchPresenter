@@ -28,5 +28,7 @@
 @interface SGTouchPresenter : UIApplication
 
 + (void) showTouchesWithColor: (UIColor *)color;
++ (void) showTouchesWithColor: (UIColor *)color
+             onlyWhenMirrored: (BOOL)dynamic;
 
 @end

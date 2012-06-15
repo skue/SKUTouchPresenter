@@ -10,7 +10,8 @@
 
 @interface ViewController : UITableViewController
 
-@property (nonatomic, weak) IBOutlet UISwitch *toggle;
+@property (nonatomic, weak) IBOutlet UISwitch *showTouchesToggle;
+@property (nonatomic, weak) IBOutlet UISwitch *dynamicTouchesToggle;
 
 @property (nonatomic, weak) IBOutlet UISlider *redSlider;
 @property (nonatomic, weak) IBOutlet UISlider *greenSlider;
@@ -19,6 +20,7 @@
 
 
 - (IBAction) toggleShowTouches:(UISwitch *)toggle;
+- (IBAction) toggleDynamicTouches:(UISwitch *)toggle;
 
 - (IBAction) changedRed:(UISlider *)slider;
 - (IBAction) changedGreen:(UISlider *)slider;

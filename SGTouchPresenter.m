@@ -37,9 +37,59 @@ static UIWindow *overlayWindow = nil;
 static BOOL showsTouches = NO;
 static UIColor *touchColor = nil;
 static NSMutableDictionary *touchLayers = nil;
+static BOOL swizzled = NO;
 
 
 @implementation SGTouchPresenter
+
+
++ (void) showTouchesWithColor: (UIColor *)color
+             onlyWhenMirrored: (BOOL)dynamic
+{
+    static id connectionObserver = nil, disconnectionObserver = nil;
+    
+    void (^presenterBlock)(NSNotification *) = ^(NSNotification *n) {
+        UIColor *activeColor = [[UIScreen screens] count] > 1 ? color : nil;
+        [SGTouchPresenter showTouchesWithColor:activeColor];
+    };
+    
+    if ( connectionObserver ) {
+        [[NSNotificationCenter defaultCenter] removeObserver:connectionObserver];
+#if !__has_feature(objc_arc)
+        [connectionObserver release];
+#endif
+        connectionObserver = nil;
+    }
+    
+    if ( disconnectionObserver ) {
+        [[NSNotificationCenter defaultCenter] removeObserver:disconnectionObserver];
+#if !__has_feature(objc_arc)
+        [disconnectionObserver release];
+#endif
+        disconnectionObserver = nil;
+    }
+    
+    if ( color && dynamic ) {
+        presenterBlock(nil);
+        connectionObserver = 
+            [[NSNotificationCenter defaultCenter] addObserverForName: UIScreenDidConnectNotification
+                                                              object: nil
+                                                               queue: nil
+                                                          usingBlock: presenterBlock];
+        disconnectionObserver = 
+            [[NSNotificationCenter defaultCenter] addObserverForName: UIScreenDidDisconnectNotification
+                                                              object: nil
+                                                               queue: nil
+                                                          usingBlock: presenterBlock];
+#if !__has_feature(objc_arc)
+        [connectionObserver retain];
+        [disconnectionObserver retain];
+#endif
+    }
+    else {
+        [SGTouchPresenter showTouchesWithColor:color];
+    }
+}
 
 
 + (void) showTouchesWithColor: (UIColor *)color
@@ -59,9 +109,14 @@ static NSMutableDictionary *touchLayers = nil;
             }
         }
         else {
-            // isa swizzling - Treat our application as an instance of SGTouchPresenter
-            [[UIApplication sharedApplication] setValue:[SGTouchPresenter class] forKey:@"isa"];
-            
+            if ( [[UIApplication sharedApplication] class] != [SGTouchPresenter class] ) {
+                // isa swizzling - Treat our application as an instance of SGTouchPresenter
+                [[UIApplication sharedApplication] setValue:[SGTouchPresenter class] forKey:@"isa"];
+                swizzled = YES;
+            }
+#if !__has_feature(objc_arc)
+            [touchLayers autorelease];
+#endif
             touchLayers = [[NSMutableDictionary alloc] init];
             overlayWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
             overlayWindow.opaque = NO;
@@ -73,8 +128,11 @@ static NSMutableDictionary *touchLayers = nil;
     }
     else {
         if ( overlayWindow ) {
-            // Restore default UIApplication behavior
-            [[UIApplication sharedApplication] setValue:[UIApplication class] forKey:@"isa"];
+            if ( swizzled ) {
+                // Restore default application class
+                [[UIApplication sharedApplication] setValue:[self superclass] forKey:@"isa"];
+                swizzled = NO;
+            }
             
 #if !__has_feature(objc_arc)
             [overlayWindow release];
@@ -87,7 +145,7 @@ static NSMutableDictionary *touchLayers = nil;
 }
 
 
-- (void) showTouches: (NSSet *)touches
+- (void) sg_showTouches: (NSSet *)touches
 {
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
@@ -132,7 +190,7 @@ static NSMutableDictionary *touchLayers = nil;
 - (void) sendEvent: (UIEvent *)event
 {
     if ( showsTouches && event.type == UIEventTypeTouches ) {
-        [self showTouches:event.allTouches];
+        [self sg_showTouches:event.allTouches];
     }
     [super sendEvent:event];
 }

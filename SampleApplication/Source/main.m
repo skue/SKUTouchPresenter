@@ -26,10 +26,14 @@
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
+#import "SGTouchPresenter.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]) );
+
+//   An alternative way to run SGTouchPresenter, by overriding UIApplication:
+//      return UIApplicationMain(argc, argv, NSStringFromClass([SGTouchPresenter class]), NSStringFromClass([AppDelegate class]) );
     }
 }

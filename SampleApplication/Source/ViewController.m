@@ -19,7 +19,7 @@
 
 @implementation ViewController
 
-@synthesize toggle, redSlider, greenSlider, blueSlider, alphaSlider;
+@synthesize showTouchesToggle, dynamicTouchesToggle, redSlider, greenSlider, blueSlider, alphaSlider;
 
 - (void) viewDidLoad {
     red     = self.redSlider.value;
@@ -30,16 +30,26 @@
 }
 
 - (void) updateTouchColor {
-    if ( toggle.on ) {
+    BOOL showTouches = showTouchesToggle.on, dynamic = dynamicTouchesToggle.on;
+    
+    if ( showTouches ) {
         UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-        [SGTouchPresenter showTouchesWithColor:color];
+        [SGTouchPresenter showTouchesWithColor:color onlyWhenMirrored:dynamic];
     }
     else {
-        [SGTouchPresenter showTouchesWithColor:nil];
+        [SGTouchPresenter showTouchesWithColor:nil onlyWhenMirrored:NO];
     }
 }
 
 - (IBAction) toggleShowTouches:(UISwitch *)toggle {
+    dynamicTouchesToggle.enabled = toggle.on;
+    if ( !toggle.on ) {
+        dynamicTouchesToggle.on = NO;
+    }
+    [self updateTouchColor];
+}
+
+- (IBAction) toggleDynamicTouches:(UISwitch *)toggle {
     [self updateTouchColor];
 }
 
