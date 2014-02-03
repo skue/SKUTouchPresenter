@@ -109,13 +109,13 @@ static BOOL swizzled = NO;
             }
         }
         else {
-            // vvvv Delete if subclassing UIApplication and paranoid about App Store approval
+            // vvvv Can delete if subclassing UIApplication and paranoid about App Store approval
             if ( [[UIApplication sharedApplication] class] != [SGTouchPresenter class] ) {
-                // isa swizzling - Treat our application as an instance of SGTouchPresenter
-                [[UIApplication sharedApplication] setValue:[SGTouchPresenter class] forKey:@"isa"];
+                // Dynamically set our application to be a subclass of SGTouchPresenter
+                object_setClass( [UIApplication sharedApplication], [SGTouchPresenter class] );
                 swizzled = YES;
             }
-            // ^^^^ Delete if subclassing UIApplication
+            // ^^^^ Can delete if subclassing UIApplication
 #if !__has_feature(objc_arc)
             [touchLayers autorelease];
 #endif
@@ -130,13 +130,13 @@ static BOOL swizzled = NO;
     }
     else {
         if ( overlayWindow ) {
-            // vvvv Delete if subclassing UIApplication and paranoid about App Store approval
+            // vvvv Can delete if subclassing UIApplication and paranoid about App Store approval
             if ( swizzled ) {
                 // Restore default application class
-                [[UIApplication sharedApplication] setValue:[self superclass] forKey:@"isa"];
+                object_setClass( [UIApplication sharedApplication], [self superclass] );
                 swizzled = NO;
             }
-            // ^^^^ Delete if subclassing UIApplication
+            // ^^^^ Can delete if subclassing UIApplication
             
 #if !__has_feature(objc_arc)
             [overlayWindow release];
