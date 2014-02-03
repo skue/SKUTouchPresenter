@@ -25,17 +25,10 @@
 #import "ViewController.h"
 #import "SGTouchPresenter.h"
 
-@interface ViewController () {
+
+@implementation ViewController {
     CGFloat red, green, blue, alpha;
 }
-
-- (void) updateTouchColor;
-@end
-
-
-@implementation ViewController
-
-@synthesize showTouchesToggle, dynamicTouchesToggle, redSlider, greenSlider, blueSlider, alphaSlider;
 
 - (void) viewDidLoad {
     red     = self.redSlider.value;
@@ -46,7 +39,7 @@
 }
 
 - (void) updateTouchColor {
-    BOOL showTouches = showTouchesToggle.on, dynamic = dynamicTouchesToggle.on;
+    BOOL showTouches = self.showTouchesToggle.on, dynamic = self.dynamicTouchesToggle.on;
     
     if ( showTouches ) {
         UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
@@ -58,9 +51,9 @@
 }
 
 - (IBAction) toggleShowTouches:(UISwitch *)toggle {
-    dynamicTouchesToggle.enabled = toggle.on;
+    self.dynamicTouchesToggle.enabled = toggle.on;
     if ( !toggle.on ) {
-        dynamicTouchesToggle.on = NO;
+        self.dynamicTouchesToggle.on = NO;
     }
     [self updateTouchColor];
 }
