@@ -29,7 +29,12 @@
 
 @implementation AppDelegate
 
-@synthesize window = window_;
-
+- (BOOL) application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    // This would be a good place to enable touches if you
+    // want the functionality to be enabled throughout your app.
+    return YES;
+}
 
 @end
