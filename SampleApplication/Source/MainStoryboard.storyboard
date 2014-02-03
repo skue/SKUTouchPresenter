@@ -1,34 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fjA-A8-eSR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="fjA-A8-eSR">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1280" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--View Controller - Touch Presenter-->
         <scene sceneID="nab-2C-C8E">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="afX-Y3-7lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="klK-7l-52k" customClass="ViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sEL-1K-aVf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="sEL-1K-aVf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="dcQ-tS-Zmu">
-                            <rect key="frame" x="0.0" y="354" width="320" height="48"/>
+                            <rect key="frame" x="0.0" y="439" width="320" height="48"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3Aq-TH-b8m">
                                     <rect key="frame" x="10" y="4" width="145" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Alert">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="showAlert:" destination="klK-7l-52k" eventType="touchUpInside" id="jfU-Or-X5F"/>
@@ -37,13 +30,8 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Jsq-k2-Jxb">
                                     <rect key="frame" x="165" y="4" width="145" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="Sheet">
-                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
                                         <action selector="showSheet:" destination="klK-7l-52k" eventType="touchUpInside" id="83o-5g-Cf1"/>
@@ -56,14 +44,14 @@
                             <tableViewSection id="lES-bf-XBJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="d8f-DY-kvl">
-                                        <rect key="frame" x="0.0" y="10" width="320" height="49"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="47"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d8f-DY-kvl" id="Pkm-j4-jeJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="hRv-0g-xhM">
-                                                    <rect key="frame" x="201" y="10" width="79" height="27"/>
+                                                    <rect key="frame" x="201" y="10" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="toggleShowTouches:" destination="klK-7l-52k" eventType="valueChanged" id="CRg-tR-NW0"/>
@@ -77,19 +65,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="Jlf-w5-xed">
-                                        <rect key="frame" x="0.0" y="59" width="320" height="49"/>
+                                        <rect key="frame" x="0.0" y="147" width="320" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="47"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jlf-w5-xed" id="dAW-oM-20c">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Ey9-AJ-gma">
-                                                    <rect key="frame" x="201" y="10" width="79" height="27"/>
+                                                    <rect key="frame" x="201" y="10" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="toggleDynamicTouches:" destination="klK-7l-52k" eventType="valueChanged" id="6T5-7a-Og1"/>
@@ -103,8 +90,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
@@ -112,10 +98,10 @@
                             <tableViewSection id="Pwe-Wt-xm8">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="214" id="5SK-Vp-g3B">
-                                        <rect key="frame" x="0.0" y="128" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="215" width="320" height="214"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="1" width="300" height="213"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5SK-Vp-g3B" id="F9a-KX-bwy">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="213"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" id="hn4-qi-T1y">
@@ -123,21 +109,21 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" id="D7Z-mv-ut9">
-                                                            <rect key="frame" x="78" y="25" width="179" height="23"/>
+                                                            <rect key="frame" x="78" y="25" width="179" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <action selector="changedRed:" destination="klK-7l-52k" eventType="valueChanged" id="PX3-BQ-Ys3"/>
                                                             </connections>
                                                         </slider>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="EDi-sb-uou">
-                                                            <rect key="frame" x="78" y="67" width="179" height="23"/>
+                                                            <rect key="frame" x="78" y="67" width="179" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <action selector="changedGreen:" destination="klK-7l-52k" eventType="valueChanged" id="ohB-RY-2cO"/>
                                                             </connections>
                                                         </slider>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="aZw-qK-6g7">
-                                                            <rect key="frame" x="78" y="109" width="179" height="23"/>
+                                                            <rect key="frame" x="78" y="109" width="179" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <action selector="changedBlue:" destination="klK-7l-52k" eventType="valueChanged" id="stJ-Sy-NuQ"/>
@@ -165,7 +151,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="6mD-17-Nx1">
-                                                            <rect key="frame" x="78" y="151" width="179" height="23"/>
+                                                            <rect key="frame" x="78" y="151" width="179" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <connections>
                                                                 <action selector="changedAlpha:" destination="klK-7l-52k" eventType="valueChanged" id="gU6-1X-6vP"/>
@@ -182,8 +168,7 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
+                                        </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                 </cells>
@@ -204,13 +189,13 @@
                         <outlet property="showTouchesToggle" destination="hRv-0g-xhM" id="gm6-6Y-azw"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afX-Y3-7lI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1115" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vtW-7g-N78">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Uv-wB-ZXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="fjA-A8-eSR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="7ei-aw-02s">
@@ -222,31 +207,11 @@
                         <segue destination="klK-7l-52k" kind="relationship" relationship="rootViewController" id="PQi-i1-lEK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Uv-wB-ZXc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="589" y="140"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="ViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="changedAlpha:" candidateClass="UISlider"/>
-                <relationship kind="action" name="changedBlue:" candidateClass="UISlider"/>
-                <relationship kind="action" name="changedGreen:" candidateClass="UISlider"/>
-                <relationship kind="action" name="changedRed:" candidateClass="UISlider"/>
-                <relationship kind="action" name="showAlert:"/>
-                <relationship kind="action" name="showSheet:"/>
-                <relationship kind="action" name="toggleDynamicTouches:" candidateClass="UISwitch"/>
-                <relationship kind="action" name="toggleShowTouches:" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="alphaSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="blueSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="dynamicTouchesToggle" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="greenSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="redSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="showTouchesToggle" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

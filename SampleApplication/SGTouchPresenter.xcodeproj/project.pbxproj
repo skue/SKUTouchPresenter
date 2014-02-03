@@ -14,6 +14,8 @@
 		980D3B8E147C7F2E00BA677D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980D3B8D147C7F2E00BA677D /* QuartzCore.framework */; };
 		982653D7147CA96B00F6C4CA /* SGTouchPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 980D3B8B147C7DD600BA677D /* SGTouchPresenter.m */; };
 		9892DFF2147C9C3600CEF797 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9892DFF1147C9C3600CEF797 /* MainStoryboard.storyboard */; };
+		9899BAA1189FE8BC00AE82DA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9899BAA0189FE8BC00AE82DA /* Default-568h@2x.png */; };
+		9899BAA3189FE8D000AE82DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9899BAA2189FE8D000AE82DA /* Images.xcassets */; };
 		98AB6667147CA9B4009BD025 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 980D3B7D147C7D9000BA677D /* AppDelegate.m */; };
 		98AB6668147CA9B4009BD025 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9892DFF4147CA02700CEF797 /* ViewController.m */; };
 		98AB6669147CA9B4009BD025 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 980D3B79147C7D9000BA677D /* main.m */; };
@@ -36,6 +38,8 @@
 		9892DFF1147C9C3600CEF797 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9892DFF3147CA02700CEF797 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9892DFF4147CA02700CEF797 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9899BAA0189FE8BC00AE82DA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9899BAA2189FE8D000AE82DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SGTouchPresenter/Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		980D3B5E147C7D9000BA677D = {
 			isa = PBXGroup;
 			children = (
+				9899BAA0189FE8BC00AE82DA /* Default-568h@2x.png */,
 				980D3B73147C7D9000BA677D /* SGTouchPresenter */,
 				980D3B6C147C7D9000BA677D /* Frameworks */,
 				980D3B6A147C7D9000BA677D /* Products */,
@@ -87,6 +92,7 @@
 				980D3B8A147C7DD600BA677D /* SGTouchPresenter.h */,
 				980D3B8B147C7DD600BA677D /* SGTouchPresenter.m */,
 				9892DFF6147CA7A000CEF797 /* Sample App */,
+				9899BAA2189FE8D000AE82DA /* Images.xcassets */,
 				980D3B74147C7D9000BA677D /* Supporting Files */,
 			);
 			name = SGTouchPresenter;
@@ -143,7 +149,7 @@
 		980D3B60147C7D9000BA677D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Consano;
 			};
 			buildConfigurationList = 980D3B63147C7D9000BA677D /* Build configuration list for PBXProject "SGTouchPresenter" */;
@@ -169,7 +175,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				980D3B78147C7D9000BA677D /* InfoPlist.strings in Resources */,
+				9899BAA3189FE8D000AE82DA /* Images.xcassets in Resources */,
 				9892DFF2147C9C3600CEF797 /* MainStoryboard.storyboard in Resources */,
+				9899BAA1189FE8BC00AE82DA /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +213,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -218,10 +231,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -230,14 +248,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -249,9 +276,12 @@
 		980D3B88147C7D9100BA677D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGTouchPresenter;
 				WRAPPER_EXTENSION = app;
 			};
@@ -260,9 +290,12 @@
 		980D3B89147C7D9100BA677D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				INFOPLIST_FILE = Source/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGTouchPresenter;
 				WRAPPER_EXTENSION = app;
 			};
