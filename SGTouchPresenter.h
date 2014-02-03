@@ -29,6 +29,6 @@
 
 + (void) showTouchesWithColor: (UIColor *)color;
 + (void) showTouchesWithColor: (UIColor *)color
-             onlyWhenMirrored: (BOOL)dynamic;
+                 whenMirrored: (BOOL)dynamic;
 
 @end

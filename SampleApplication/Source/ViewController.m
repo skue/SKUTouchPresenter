@@ -50,10 +50,10 @@
     
     if ( showTouches ) {
         UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-        [SGTouchPresenter showTouchesWithColor:color onlyWhenMirrored:dynamic];
+        [SGTouchPresenter showTouchesWithColor:color whenMirrored:dynamic];
     }
     else {
-        [SGTouchPresenter showTouchesWithColor:nil onlyWhenMirrored:NO];
+        [SGTouchPresenter showTouchesWithColor:nil whenMirrored:NO];
     }
 }
 

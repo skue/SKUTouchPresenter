@@ -44,7 +44,7 @@ static BOOL swizzled = NO;
 
 
 + (void) showTouchesWithColor: (UIColor *)color
-             onlyWhenMirrored: (BOOL)dynamic
+                 whenMirrored: (BOOL)dynamic
 {
     static id connectionObserver = nil, disconnectionObserver = nil;
     
