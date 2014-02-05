@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  SGTouchPresenter
+//  SKUTouchPresenter
 //
 //  Copyright 2011-2014 Scott Guelich.
 //
@@ -23,7 +23,7 @@
 //  DEALINGS IN THE SOFTWARE.
 
 #import "ViewController.h"
-#import "SGTouchPresenter.h"
+#import "SKUTouchPresenter.h"
 
 
 @implementation ViewController {
@@ -42,15 +42,15 @@
     BOOL showTouches = self.showTouchesToggle.on, dynamic = self.dynamicTouchesToggle.on;
     
     if ( !showTouches ) {
-        [SGTouchPresenter showTouchesWithColor:nil];
+        [SKUTouchPresenter showTouchesWithColor:nil];
     }
     else {
         UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
         if ( dynamic ) {
-            [SGTouchPresenter showTouchesWhenMirroringWithColor:color];
+            [SKUTouchPresenter showTouchesWhenMirroringWithColor:color];
         }
         else {
-            [SGTouchPresenter showTouchesWithColor:color];
+            [SKUTouchPresenter showTouchesWithColor:color];
         }
     }
 }

@@ -1,6 +1,6 @@
 //
 //  main.m
-//  SGTouchPresenter
+//  SKUTouchPresenter
 //
 //  Copyright 2011-2012 Scott Guelich.
 //
@@ -26,14 +26,14 @@
 #import <UIKit/UIKit.h>
 
 #import "AppDelegate.h"
-#import "SGTouchPresenter.h"
+#import "SKUTouchPresenter.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]) );
 
-//   An alternative way to run SGTouchPresenter, by overriding UIApplication:
-//      return UIApplicationMain(argc, argv, NSStringFromClass([SGTouchPresenter class]), NSStringFromClass([AppDelegate class]) );
+//   An alternative way to run SKUTouchPresenter, by overriding UIApplication:
+//      return UIApplicationMain(argc, argv, NSStringFromClass([SKUTouchPresenter class]), NSStringFromClass([AppDelegate class]) );
     }
 }

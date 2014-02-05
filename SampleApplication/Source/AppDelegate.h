@@ -1,6 +1,6 @@
 //
 //  AppDelegate.h
-//  SGTouchPresenter
+//  SKUTouchPresenter
 //
 //  Copyright 2011-2014 Scott Guelich.
 //

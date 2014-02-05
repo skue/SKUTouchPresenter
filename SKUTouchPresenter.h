@@ -1,6 +1,6 @@
 //
-//  SGTouchPresenter.h
-//  SGTouchPresenter
+//  SKUTouchPresenter.h
+//  SKUTouchPresenter
 //
 //  Copyright 2011-2014 Scott Guelich.
 //
@@ -26,7 +26,7 @@
 #import <UIKit/UIKit.h>
 
 /**
- * SGTouchPresenter allows you to demo your app to an audience and have
+ * SKUTouchPresenter allows you to demo your app to an audience and have
  * them follow your touches. It displays a dot (or multiple dots) wherever
  * the screen is touched. You can configure the dot's color and opacity,
  * and you can also have the dot(s) appear only when the device is
@@ -34,16 +34,16 @@
  *
  * Install via Cocoapods or manually (see the README for more details).
  *
- * **Important:** SGTouchPresenter recognizes touches by acting as a
+ * **Important:** SKUTouchPresenter recognizes touches by acting as a
  * custom subclass of UIApplication. If your app already uses a custom
- * subclass of UIApplication, then you should edit SGTouchPresenter.h
+ * subclass of UIApplication, then you should edit SKUTouchPresenter.h
  * and change the superclass from UIApplication to the name of your
  * custom subclass (so the inheritance chain is UIApplication ->
- * YourApplicationSubclass -> SGTouchPresenter).
+ * YourApplicationSubclass -> SKUTouchPresenter).
  *
  */
 
-@interface SGTouchPresenter : UIApplication
+@interface SKUTouchPresenter : UIApplication
 
 /**
  * Enables (or disables) showing dots wherever the screen is touched.

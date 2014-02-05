@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  SGTouchPresenter
+//  SKUTouchPresenter
 //
 //  Copyright 2011-2014 Scott Guelich.
 //
@@ -24,7 +24,7 @@
 
 
 #import "AppDelegate.h"
-#import "SGTouchPresenter.h"
+#import "SKUTouchPresenter.h"
 
 
 @implementation AppDelegate

@@ -1,6 +1,6 @@
 //
-//  SGTouchPresenter.m
-//  SGTouchPresenter
+//  SKUTouchPresenter.m
+//  SKUTouchPresenter
 //  
 //  Copyright 2011-2014 Scott Guelich
 //
@@ -23,7 +23,7 @@
 //  DEALINGS IN THE SOFTWARE.
 
 
-#import "SGTouchPresenter.h"
+#import "SKUTouchPresenter.h"
 #import <QuartzCore/QuartzCore.h>
 #import <objc/runtime.h>
 
@@ -40,7 +40,7 @@ static BOOL swizzled = NO;
 static CGFloat touchRadius = 20;
 
 
-@implementation SGTouchPresenter
+@implementation SKUTouchPresenter
 
 
 + (void) setTouchRadius: (CGFloat)radius
@@ -55,7 +55,7 @@ static CGFloat touchRadius = 20;
     
     void (^presenterBlock)(NSNotification *) = ^(NSNotification *n) {
         UIColor *activeColor = [[UIScreen screens] count] > 1 ? color : nil;
-        [SGTouchPresenter showTouchesWithColor:activeColor];
+        [SKUTouchPresenter showTouchesWithColor:activeColor];
     };
     
     if ( connectionObserver ) {
@@ -92,7 +92,7 @@ static CGFloat touchRadius = 20;
 #endif
     }
     else {
-        [SGTouchPresenter showTouchesWithColor:color];
+        [SKUTouchPresenter showTouchesWithColor:color];
     }
 }
 
@@ -115,9 +115,9 @@ static CGFloat touchRadius = 20;
         }
         else {
             // vvvv Can delete if subclassing UIApplication and paranoid about App Store approval
-            if ( [[UIApplication sharedApplication] class] != [SGTouchPresenter class] ) {
-                // Dynamically set our application to be a subclass of SGTouchPresenter
-                object_setClass( [UIApplication sharedApplication], [SGTouchPresenter class] );
+            if ( [[UIApplication sharedApplication] class] != [SKUTouchPresenter class] ) {
+                // Dynamically set our application to be a subclass of SKUTouchPresenter
+                object_setClass( [UIApplication sharedApplication], [SKUTouchPresenter class] );
                 swizzled = YES;
             }
             // ^^^^ Can delete if subclassing UIApplication
