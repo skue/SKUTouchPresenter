@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  s.source       = { :git => "https://github.com/skue/SGTouchPresenter", :tag => "1.2.0" }
+  s.source       = { :git => "https://github.com/skue/SGTouchPresenter.git", :tag => "1.2.0" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
