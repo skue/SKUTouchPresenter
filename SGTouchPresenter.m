@@ -29,7 +29,6 @@
 
 
 #define kWindowLevel    (2 * UIWindowLevelAlert)
-#define kTouchRadius    20
 #define kTapDelay       0.1
 
 
@@ -38,13 +37,19 @@ static BOOL showsTouches = NO;
 static UIColor *touchColor = nil;
 static NSMutableDictionary *touchLayers = nil;
 static BOOL swizzled = NO;
+static CGFloat touchRadius = 20;
 
 
 @implementation SGTouchPresenter
 
 
-+ (void) showTouchesWithColor: (UIColor *)color
-                 whenMirrored: (BOOL)dynamic
++ (void) setTouchRadius: (CGFloat)radius
+{
+    touchRadius = radius;
+}
+
+
++ (void) showTouchesWhenMirroringWithColor: (UIColor *)color
 {
     static id connectionObserver = nil, disconnectionObserver = nil;
     
@@ -69,7 +74,7 @@ static BOOL swizzled = NO;
         disconnectionObserver = nil;
     }
     
-    if ( color && dynamic ) {
+    if ( color ) {
         presenterBlock(nil);
         connectionObserver = 
             [[NSNotificationCenter defaultCenter] addObserverForName: UIScreenDidConnectNotification
@@ -160,8 +165,8 @@ static BOOL swizzled = NO;
         
         if ( !layer ) {
             layer = [CALayer layer];
-            layer.bounds = CGRectMake( 0, 0, kTouchRadius * 2, kTouchRadius * 2 );
-            layer.cornerRadius = kTouchRadius;
+            layer.bounds = CGRectMake( 0, 0, touchRadius * 2, touchRadius * 2 );
+            layer.cornerRadius = touchRadius;
             layer.backgroundColor = touchColor.CGColor;
             layer.opacity = 1;
             [overlayWindow.layer addSublayer:layer];

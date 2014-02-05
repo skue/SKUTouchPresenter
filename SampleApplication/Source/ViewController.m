@@ -41,12 +41,17 @@
 - (void) updateTouchColor {
     BOOL showTouches = self.showTouchesToggle.on, dynamic = self.dynamicTouchesToggle.on;
     
-    if ( showTouches ) {
-        UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
-        [SGTouchPresenter showTouchesWithColor:color whenMirrored:dynamic];
+    if ( !showTouches ) {
+        [SGTouchPresenter showTouchesWithColor:nil];
     }
     else {
-        [SGTouchPresenter showTouchesWithColor:nil whenMirrored:NO];
+        UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+        if ( dynamic ) {
+            [SGTouchPresenter showTouchesWhenMirroringWithColor:color];
+        }
+        else {
+            [SGTouchPresenter showTouchesWithColor:color];
+        }
     }
 }
 
