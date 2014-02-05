@@ -44,7 +44,7 @@ static BOOL swizzled = NO;
 
 
 + (void) showTouchesWithColor: (UIColor *)color
-                 whenMirrored: (BOOL)dynamic
+                 whenMirrored: (BOOL)mirroredOnly
 {
     static id connectionObserver = nil, disconnectionObserver = nil;
     
@@ -69,7 +69,7 @@ static BOOL swizzled = NO;
         disconnectionObserver = nil;
     }
     
-    if ( color && dynamic ) {
+    if ( color && mirroredOnly ) {
         presenterBlock(nil);
         connectionObserver = 
             [[NSNotificationCenter defaultCenter] addObserverForName: UIScreenDidConnectNotification

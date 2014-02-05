@@ -1,12 +1,13 @@
 # SGTouchPresenter
 
-This class will show a large dot wherever the screen is touched. The color is
-customizable. This is primarily designed for doing presentations with a mirrored
-iOS device (iPhone 4S/iPad 2 or later), so the audience can follow the presenter's
-touches.
+SGTouchPresenter allows you to demo your app to an audience and have
+them follow your touches. It displays a dot (or multiple dots) wherever
+the screen is touched. You can configure the dot's color and opacity,
+and you can also have the dot(s) appear only when the device is
+mirroring to a second display (via AirPlay or adapter cable).
 
-A sample app is included, which allows you to turn the dot on and off and customize
-its color:
+A sample app is included, which allows you to turn dots on & off and
+customize the color/opacity:
 
 ![](https://raw.github.com/skue/SGTouchPresenter/master/SampleApplication/Screenshot.png)
 
@@ -24,8 +25,8 @@ its color:
 
 **Important:** if you already use a custom subclass of `UIApplication`, then you
 should edit `SGTouchPresenter.h` and change the superclass from `UIApplication` to
-the name of your custom subclass — so the inheritance chain is `UIApplication`
--> `YourApplicationSubclass` -> `SGTouchPresenter`
+the name of your custom subclass (so the inheritance chain is `UIApplication`
+-> `YourApplicationSubclass` -> `SGTouchPresenter`).
 
 
 ## Usage
@@ -35,13 +36,13 @@ application delegate, or whenever you want to start showing touches.
 
 `+ (void) showTouchesWithColor: (UIColor *)color`
 
-> When a color is provided, touches will be shown. Passing `nil` will turn it off.
+> Enables (or disables) showing dots wherever the screen is touched.
+> Pass `nil` to disable.
 
 `+ (void) showTouchesWithColor: (UIColor *)color whenMirrored: (BOOL)dynamic`
 
-> This will automatically show touches whenever another screen is connected,
-> and stop showing touches when the screen is disconnected. Passing a `nil`
-> color will disable the behavior and stop tracking the number of screens.
+> Enables (or disables) showing dots wherever the screen is touched, and
+> optionally only when the device is mirroring to a second display.
 
 The SGTouchPresenter class works with or without ARC.
 
