@@ -4,7 +4,7 @@ SGTouchPresenter allows you to demo your app to an audience and have
 them follow your touches. It displays a dot (or multiple dots) wherever
 the screen is touched. You can configure the dot's color and opacity,
 and you can also have the dot(s) appear only when the device is
-mirroring to a second display (via AirPlay or adapter cable).
+mirroring to a second display via AirPlay or an adapter cable.
 
 A sample app is included, which allows you to turn dots on & off and
 customize the color/opacity:
@@ -54,24 +54,23 @@ displaying a dot wherever a touch occurs. Events are passed onward, so this
 shouldn't affect your app's behavior.
 
 In order to intercept events via `UIApplication sendEvents:`, you typically
-subclass `UIAppliation`. By default, the code uses dynamic subclassing[1] to
-provide this functionality for you automatically the first time you call
-`showTouchesWithColor:` or `showTouchesWithColor:onlyWhenMirrored`.
-This enables you to wrap these calls with `#define` and only include the
-functionality for particular builds.
+subclass `UIAppliation`. By default, the code uses [dynamic subclassing][1]
+to do this automatically the first time you call `showTouchesWithColor:` or
+`showTouchesWithColor:onlyWhenMirrored`. This enables you to wrap these
+calls with `#define` blocks and only include the functionality for particular builds.
 
 SGTouchPresenter does not use any private APIs and should be fine for App Store approval.
 However, you can set it up manually without the dynamic subclassing: you just need to
 add SGTouchPresenter as a custom subclass of `UIApplication`. Here's how to do that:
 
-  1. Follow the integration steps, above.
+  1. Follow the integration steps above.
   1. Edit `main.m` to add `@"SGTouchPresenter"` as the third argument to `UIApplicationMain`.
   2. If your app already uses a custom subclass of `UIApplication` then please see the
      notes about custom subclasses in the Usage section.
-  2. If you want to delete the swizzling code to be extra paranoid, open `SGTouchPresenter.m`
-     and delete the two blocks of code that say "Can delete if subclassing...".
+  2. If you want to delete the dynamic subclassing code to be extra paranoid, open
+     `SGTouchPresenter.m` and delete the two blocks of code that say "Can delete if subclassing...".
 
-[1] https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/object_setClass
+[1]: https://developer.apple.com/library/ios/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/object_setClass
 
 ## License
 

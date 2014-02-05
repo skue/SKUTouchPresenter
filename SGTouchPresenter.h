@@ -30,7 +30,7 @@
  * them follow your touches. It displays a dot (or multiple dots) wherever
  * the screen is touched. You can configure the dot's color and opacity,
  * and you can also have the dot(s) appear only when the device is
- * mirroring to a second display (via AirPlay or adapter cable).
+ * mirroring to a second display via AirPlay or an adapter cable.
  *
  * Install via Cocoapods or manually (see the README for more details).
  *
