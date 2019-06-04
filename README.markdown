@@ -1,3 +1,10 @@
+# WARNING: This is old code
+
+_Feel free to look to this code for inspiration, but do not expect it to run.
+The basic approach may still work, but it has not been tested in years._
+
+---
+
 # SKUTouchPresenter
 
 SKUTouchPresenter allows you to demo your app to an audience and have
